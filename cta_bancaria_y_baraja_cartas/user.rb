@@ -6,11 +6,12 @@ class Usuario
     @cuentas = cuentas
   end
   def saldo_total
-    puts @cuentas.map {|x| x.saldo}.sum
+    total= @cuentas.map {|x| x.saldo }.sum
+    puts "saldo total #{total}"
   end
 end
 
-cuentas_banco = [CuentaBancaria.new('bci', 1234456789, 100000),CuentaBancaria.new('Santander', 123144544, 50000),CuentaBancaria.new('bice', 543212, 10)]
+cuentas_banco = [CuentaBancaria.new('bci', 1234456789, 100000), CuentaBancaria.new('Santander', 123144544, 50000), CuentaBancaria.new('bice', 543212, 10)]
 
 usuario = Usuario.new("elias", cuentas_banco)
 usuario.saldo_total
