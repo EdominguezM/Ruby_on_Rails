@@ -2,11 +2,11 @@ require_relative 'carta.rb'
 
 class Baraja
   attr_accessor :cartas
-  def initialize(cartas=[])
-    @cartas = cartas
+  def initialize
+    @cartas = []
     pinta=['C', 'D', 'E', 'T']
     pinta.each do|v|
-      13.times { |i| cartas.push(Carta.new(i +1, v)) }
+      13.times { |i| cartas.push(Carta.new(i + 1, v)) }
     end
   end
   def barajar
