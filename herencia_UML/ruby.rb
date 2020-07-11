@@ -1,24 +1,11 @@
 class Appointment
   attr_accessor :location, :purpose, :hour, :min
-
   def initialize(location, purpose, hour, min)
     @location = location
     @purpose = purpose
     @hour = hour
     @min = min
   end
-  # def location
-  #   @location
-  # end
-  # def purpose
-  #   @purpose
-  # end
-  # def hour
-  #   @hour
-  # end
-  # def min
-  #   @min
-  # end
 end
 
 class MonthlyAppointment < Appointment
@@ -27,11 +14,6 @@ class MonthlyAppointment < Appointment
     super(location, purpose, hour, min)
     @day = day
   end
-
-  # def day
-  #   @day
-  # end
-
   def occurs_on?(day)
     day == @day
   end
@@ -60,15 +42,6 @@ class OnTimeAppointment < Appointment
     @month = month
     @year = year
   end
-  # def day
-  #   @day
-  # end
-  # def month
-  #   @month
-  # end
-  # def year
-  #   @year
-  # end
   def occurs_on?(day, month, year)
     day == @day &&
     month == @month &&

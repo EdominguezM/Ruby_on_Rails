@@ -39,18 +39,16 @@ class Animal
   attr_reader :nombre
   def initialize(nombre)
     @nombre = nombre
-    puts "#{@nombre}"
   end
 end
 #tipos de animales
 class Ave < Animal
+end
 
-end
 class Mamifero < Animal
- 
 end
+
 class Insecto < Animal
-  
 end
 #AVES
 class Pinguino < Ave
@@ -60,10 +58,10 @@ class Pinguino < Ave
 end
 class Paloma < Ave
   include Habilidades::Volador
+  include Habilidades::Caminante
   include Alimentacion::Herbivoro
 end
 class Pato  < Ave
-  include Habilidades::Volador
   include Habilidades::Nadador
   include Alimentacion::Herbivoro
 end
@@ -94,5 +92,8 @@ class Abeja < Insecto
   include Alimentacion::Herbivoro
 end
 
-animal = Gato.new('Gato')
-puts animal.comer
+animal = Paloma.new('Paloma')
+puts animal.caminar
+
+ejemplo = Pato.new('pato')
+puts ejemplo.nadar
